@@ -7,9 +7,10 @@ public class ProductImpl implements Product{
     private int buyerId;
     private int sellerId;
     private int price;
-    private String status;
+    private int status;
+    
 	public ProductImpl(int productId, String productName, int categoryId, int buyerId, int sellerId, int price,
-			String status) {
+			int status) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -58,10 +59,10 @@ public class ProductImpl implements Product{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getStatus() {
+	public int getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 	@Override
@@ -69,4 +70,5 @@ public class ProductImpl implements Product{
 		return "productId = " + productId + ", productName = " + productName + ", categoryId = " + categoryId
 				+ ", buyerId = " + buyerId + ", sellerId = " + sellerId + ", price = " + price + ", status = " + status + "\n";
 	}
+	@Override
 }

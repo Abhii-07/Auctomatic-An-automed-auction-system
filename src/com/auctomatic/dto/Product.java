@@ -13,6 +13,6 @@ public interface Product {
 	public void setSellerId(int sellerId) ;
 	public int getPrice() ;
 	public void setPrice(int price) ;
-	public String getStatus() ;
-	public void setStatus(String status) ;
+	public int getStatus() ;
+	public void setStatus(int status) ;
 }

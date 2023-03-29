@@ -2,60 +2,71 @@ package com.auctomatic.dto;
 
 public class BuyerImpl implements Buyer{
 
-	private int buyerId ;
-    private String buyerName ;
-    private String email ;
-    private String password ;
-    private String location ;
+	private int buyer_ID;
+    private String buyer_name ;
+    private String buyer_email ;
+    private String buyer_username ;
+    private String buyer_password ;
+    private String buyer_mobile ;
     
     public BuyerImpl() {}
     
-	public BuyerImpl(int buyerId, String buyerName, String email, String password, String location) {
+	public BuyerImpl(int buyer_ID, String buyer_name, String buyer_email,String buyer_username, String buyer_password, String buyer_mobile) {
 		super();
-		this.buyerId = buyerId;
-		this.buyerName = buyerName;
-		this.email = email;
-		this.password = password;
-		this.location = location;
+		this.buyer_ID = buyer_ID;
+		this.buyer_name = buyer_name;
+		this.buyer_email = buyer_email;
+		this.buyer_username = buyer_username;
+		this.buyer_password = buyer_password;
+		this.buyer_mobile = buyer_mobile;
 	}
 
 	public int getBuyerId() {
-		return buyerId;
+		return buyer_ID;
 	}
-	public void setBuyerId(int buyerId) {
-		this.buyerId = buyerId;
+	public void setBuyerId(int buyer_ID) {
+		this.buyer_ID = buyer_ID;
 	}
 	public String getBuyerName() {
-		return buyerName;
+		return buyer_name;
 	}
-	public void setBuyerName(String buyerName) {
-		this.buyerName = buyerName;
+	public void setBuyerName(String buyer_name) {
+		this.buyer_name = buyer_name;
 	}
 	public String getEmail() {
-		return email;
+		return buyer_email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String buyer_email) {
+		this.buyer_email = buyer_email;
 	}
 	public String getPassword() {
-		return password;
+		return buyer_password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String buyer_password) {
+		this.buyer_password = buyer_password;
 	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
+	public String getMobile() {
+		return buyer_mobile;
 	}
 	
+	public void setMobile(String buyer_mobile) {
+		this.buyer_mobile = buyer_mobile;
+	}
+	
+	public String getUsername() {
+		return buyer_username;
+	}
+	
+	public void setUsername(String buyer_username) {
+		this.buyer_username = buyer_username;
+	}
 	
 	@Override
 	public String toString() {
-		return "buyerId = " + buyerId + "\n" + "buyerName = " + buyerName + "\n" + "email = " + email + "\n" + "password = "
-				+ password + "\n" + "location = " + location + "\n";
+		return "buyerId = " + buyer_ID + "\n" + "buyerName = " + buyer_name + "\n" + "email = " + buyer_email + "\n" + "username = " + buyer_username + "\n"+"password = "
+				+ buyer_password + "\n" + "Mobile No = " + buyer_username + "\n";
 	}
+
     
 
 }
