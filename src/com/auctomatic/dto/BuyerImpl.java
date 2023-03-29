@@ -1,6 +1,7 @@
-package DTO;
+package com.auctomatic.dto;
 
 public class BuyerImpl implements Buyer{
+
 	private int buyerId ;
     private String buyerName ;
     private String email ;
@@ -56,5 +57,5 @@ public class BuyerImpl implements Buyer{
 				+ password + "\n" + "location = " + location + "\n";
 	}
     
-    
+
 }
