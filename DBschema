@@ -1,0 +1,87 @@
+DB:
+
+CREATE DATABASE AUCTOMATIC:
+
+CREATE TABLE BUYER(
+     buyer_ID int primary key auto_increment,
+     buyer_name VARCHAR(20) not null,
+     buyer_email VARCHAR(20) not null unique,
+     buyer_password VARCHAR(15) not null,
+     buyer_location VARCHAR(15)
+     );
+     
+CREATE TABLE SELLER(
+     seller_ID int primary key auto_increment,
+     seller_name VARCHAR(20) not null,
+     seller_email VARCHAR(20) not null unique,
+     seller_password VARCHAR(15) not null,
+     seller_location VARCHAR(15)
+    );
+    
+CREATE TABLE CATEGORY(
+    category_ID int primary key auto_increment,
+    category_name VARCHAR(20)
+    );
+     
+mysql> DESC BUYER; DESC SELLER; DESC CATEGORY;
+
+Table BUYER:
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| buyer_ID       | int         | NO   | PRI | NULL    | auto_increment |
+| buyer_name     | varchar(20) | NO   |     | NULL    |                |
+| buyer_email    | varchar(20) | NO   | UNI | NULL    |                |
+| buyer_password | varchar(15) | NO   |     | NULL    |                |
+| buyer_location | varchar(15) | YES  |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.20 sec)
+
+Table SELLER:
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| seller_ID       | int         | NO   | PRI | NULL    | auto_increment |
+| seller_name     | varchar(20) | NO   |     | NULL    |                |
+| seller_email    | varchar(20) | NO   | UNI | NULL    |                |
+| seller_password | varchar(15) | NO   |     | NULL    |                |
+| seller_location | varchar(15) | YES  |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+
+Table CATEGORY:
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| category_ID   | int         | NO   | PRI | NULL    | auto_increment |
+| category_name | varchar(20) | YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+
+
+
+mysql> INSERT INTO CATEGORY (category_name) VALUES ("Clothing"),("Electronics"),("Grocery"),("Miscellaneous");
+mysql> select * from category;
++-------------+---------------+
+| category_ID | category_name |
++-------------+---------------+
+|        1001 | Clothing      |
+|        1002 | Electronics   |
+|        1003 | Grocery       |
+|        1004 | Miscellaneous |
++-------------+---------------+
+by providing item_id, name, price, quantity, description,
+sold_status (0 for unsold, 1 for sold)
+
+create table products(
+    item_id int primary key auto_increment,
+    item_name varchar(30) not null,
+    item_price int,
+    item_quantity int,
+    item_description varchar(50),
+    sold_status tinyint default 0,
+    buyer_ID int,
+    seller_ID int,
+    category_ID int,
+    foreign key (seller_ID) references seller(seller_ID),
+    foreign key (category_ID) references category(category_ID),
+    foreign key (buyer_ID) references buyer(buyer_ID)
+    );
