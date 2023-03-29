@@ -1,23 +1,27 @@
 package com.auctomatic.dto;
 
 public interface Seller {
-	public int getSellerId() ;
+	public int getSeller_ID();
 
-	public void setSellerId(int sellerId) ;
+	public void setSeller_ID(int seller_ID);
 
-	public String getSellerName() ;
+	public String getSeller_name();
 
-	public void setSellerName(String sellerName) ;
+	public void setSeller_name(String seller_name);
 
-	public String getEmail() ;
+	public String getSeller_email();
 
-	public void setEmail(String email) ;
+	public void setSeller_email(String seller_email);
 
-	public String getPassword() ;
+	public String getSeller_username();
 
-	public void setPassword(String password) ;
+	public void setSeller_username(String seller_username);
 
-	public String getLocation() ;
+	public String getSeller_password();
 
-	public void setLocation(String location) ;
+	public void setSeller_password(String seller_password);
+
+	public String getSeller_mobile();
+
+	public void setSeller_mobile(String seller_mobile);
 }
