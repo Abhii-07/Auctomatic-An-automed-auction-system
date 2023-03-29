@@ -12,7 +12,6 @@ public class BuyerImpl implements Buyer{
     public BuyerImpl() {}
     
 	public BuyerImpl(int buyer_ID, String buyer_name, String buyer_email,String buyer_username, String buyer_password, String buyer_mobile) {
-		super();
 		this.buyer_ID = buyer_ID;
 		this.buyer_name = buyer_name;
 		this.buyer_email = buyer_email;

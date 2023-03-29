@@ -20,43 +20,43 @@ public class SoldItemsImpl implements SoldItems{
 		this.price = price;
 	}
 
-	public int getProductId() {
+	public int getProduct_ID() {
 		return product_ID;
 	}
 
-	public void setProductId(int product_ID) {
+	public void setProduct_ID(int product_ID) {
 		this.product_ID = product_ID;
 	}
 
-	public String getProductName() {
+	public String getProduct_name() {
 		return product_name;
 	}
 
-	public void setProductName(String product_name) {
+	public void setProduct_name(String product_name) {
 		this.product_name = product_name;
 	}
 
-	public String getSellerName() {
+	public String getSeller_name() {
 		return seller_name;
 	}
 
-	public void setSellerName(String seller_name) {
+	public void setSeller_name(String seller_name) {
 		this.seller_name = seller_name;
 	}
 
-	public String getCategoryName() {
+	public String getCategory_name() {
 		return category_name;
 	}
 
-	public void setCategoryName(String category_name) {
+	public void setCategory_name(String category_name) {
 		this.category_name = category_name;
 	}
 
-	public int getBuyerId() {
+	public int getBuyer_ID() {
 		return buyer_ID;
 	}
 
-	public void setBuyerId(int buyer_ID) {
+	public void setBuyer_ID(int buyer_ID) {
 		this.buyer_ID = buyer_ID;
 	}
 
@@ -67,6 +67,5 @@ public class SoldItemsImpl implements SoldItems{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
     
 }

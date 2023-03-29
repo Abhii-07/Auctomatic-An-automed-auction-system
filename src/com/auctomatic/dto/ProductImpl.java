@@ -1,74 +1,83 @@
 package com.auctomatic.dto;
 
 public class ProductImpl implements Product{
-	private int productId;
-    private String productName;
-    private int categoryId;
-    private int buyerId;
-    private int sellerId;
-    private int price;
-    private int status;
-    
-	public ProductImpl(int productId, String productName, int categoryId, int buyerId, int sellerId, int price,
+	private int product_ID;
+	private String product_name;
+	private int category_ID;
+	private int buyer_ID;
+	private int seller_ID;
+	private int price;
+	private int status;
+	
+	public ProductImpl(int product_ID, String product_name, int category_ID, int buyer_ID, int seller_ID, int price,
 			int status) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.categoryId = categoryId;
-		this.buyerId = buyerId;
-		this.sellerId = sellerId;
+		this.product_ID = product_ID;
+		this.product_name = product_name;
+		this.category_ID = category_ID;
+		this.buyer_ID = buyer_ID;
+		this.seller_ID = seller_ID;
 		this.price = price;
 		this.status = status;
 	}
+
 	public ProductImpl() {
-		
 	}
-	public int getProductId() {
-		return productId;
+
+	public int getProduct_ID() {
+		return product_ID;
 	}
-	public void setProductId(int productId) {
-		this.productId = productId;
+
+	public void setProduct_ID(int product_ID) {
+		this.product_ID = product_ID;
 	}
-	public String getProductName() {
-		return productName;
+
+	public String getProduct_name() {
+		return product_name;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
+
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
-	public int getCategoryId() {
-		return categoryId;
+
+	public int getCategory_ID() {
+		return category_ID;
 	}
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
+
+	public void setCategory_ID(int category_ID) {
+		this.category_ID = category_ID;
 	}
-	public int getBuyerId() {
-		return buyerId;
+
+	public int getBuyer_ID() {
+		return buyer_ID;
 	}
-	public void setBuyerId(int buyerId) {
-		this.buyerId = buyerId;
+
+	public void setBuyer_ID(int buyer_ID) {
+		this.buyer_ID = buyer_ID;
 	}
-	public int getSellerId() {
-		return sellerId;
+
+	public int getSeller_ID() {
+		return seller_ID;
 	}
-	public void setSellerId(int sellerId) {
-		this.sellerId = sellerId;
+
+	public void setSeller_ID(int seller_ID) {
+		this.seller_ID = seller_ID;
 	}
+
 	public int getPrice() {
 		return price;
 	}
+
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
 	public int getStatus() {
 		return status;
 	}
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	@Override
-	public String toString() {
-		return "productId = " + productId + ", productName = " + productName + ", categoryId = " + categoryId
-				+ ", buyerId = " + buyerId + ", sellerId = " + sellerId + ", price = " + price + ", status = " + status + "\n";
-	}
-	@Override
+	
+	
 }
