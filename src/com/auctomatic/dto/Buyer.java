@@ -1,4 +1,4 @@
-package DTO;
+package com.auctomatic.dto;
 
 public interface Buyer {
 	public int getBuyerId() ;
@@ -11,5 +11,4 @@ public interface Buyer {
 	public void setPassword(String password) ;
 	public String getLocation();
 	public void setLocation(String location) ;
-	
 }

@@ -1,6 +1,4 @@
-package DTO;
-
-
+package com.auctomatic.dto;
 
 public class ProductImpl implements Product{
 	private int productId;
@@ -71,5 +69,4 @@ public class ProductImpl implements Product{
 		return "productId = " + productId + ", productName = " + productName + ", categoryId = " + categoryId
 				+ ", buyerId = " + buyerId + ", sellerId = " + sellerId + ", price = " + price + ", status = " + status + "\n";
 	}
-   
 }

@@ -1,4 +1,4 @@
-package DTO;
+package com.auctomatic.dto;
 
 public interface Seller {
 	public int getSellerId() ;

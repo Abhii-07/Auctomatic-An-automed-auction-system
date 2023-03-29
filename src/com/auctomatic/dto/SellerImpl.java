@@ -1,4 +1,4 @@
-package DTO;
+package com.auctomatic.dto;
 
 public class SellerImpl implements Seller{
 	 private int sellerId ;
@@ -63,6 +63,4 @@ public class SellerImpl implements Seller{
 		return "sellerId = " + sellerId + ", sellerName = " + sellerName + ", email= " + email + ", password = "
 				+ password + ", location = "  + location + "]";
 	}
-	 
-	 
 }
