@@ -104,11 +104,11 @@ public class Home {
 		
 		            while(!resultb) {
 		                countbuyerLogin++;
-		                System.out.println((4-countbuyerLogin) +" Attempts remaining");
+		                System.out.println( +(4-countbuyerLogin) + " Attempts remaining");
 		                resultb = buyerMain.BuyerLogin();
 		
 		                if(countbuyerLogin ==3 && resultb ==false) {
-		                    System.out.println( "Maximum Limit Crossed : Try Again Later");
+		                    System.out.println( Color.RED_BRIGHT+"Maximum Limit Crossed : Try Again Later"+ Color.RESET);
 		                    break;
 		
 		                }
@@ -122,16 +122,24 @@ public class Home {
 		                    String choiceAdmin = sc.nextLine();
 		
 		                    if(choiceAdmin.equals("1")) {
-		                        buyerMain.SearchItemCategory();
+		                    	buyerMain.ChangePassword();
 		                    }else if(choiceAdmin.equals("2")) {
-		                        buyerMain.BuyItem();
+		                    	buyerMain.ChangePassword();
 		                    }else if (choiceAdmin.equals("3")) {
-		                        buyerMain.BuyerByCategory();
-		                    }else if(choiceAdmin.equals("4")){
-		                        System.out.println("LOGOUT SUCCESSFUL !");
+		                    	buyerMain.ChangePassword();
+		                    }else if (choiceAdmin.equals("4")) {
+		                    	buyerMain.ChangePassword();
+		                    }else if (choiceAdmin.equals("5")) {
+		                    	buyerMain.ChangePassword();
+		                    }else if (choiceAdmin.equals("6")) {
+		                        System.out.println( Color.BLUE + "LOGOUT SUCCESSFUL!" + Color.RESET);
+		                        break;
+		                    }else if(choiceAdmin.equals("7")){
+		                    	buyerMain.ChangePassword();
+		                        System.out.println( Color.RED + "Deleted SUCCESSFUL!" + Color.RESET);
 		                        break;
 		                    }else {
-		                        System.out.println("CHOOSE CORRECT INPUT RANGE FROM 1 TO 4");
+		                        System.out.println("CHOOSE CORRECT INPUT RANGE FROM 1 TO 7" );
 		                    }
 		                }
 		                appOpening();

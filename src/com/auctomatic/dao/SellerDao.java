@@ -21,7 +21,7 @@ public interface SellerDao {
 	 
 	 public String UpdateProductDetailsByPrice(int productId, int price) throws SellerException;
 
-	 public String DeleteProductItems(int productId) throws SellerException;
+	 public String DeleteProductItems(int product_ID) throws SellerException;
 
 	 public List<SoldItems> SoldItemHistory(int sellerId) throws SellerException;
 	

@@ -5,9 +5,11 @@ import java.util.Scanner;
 import com.auctomatic.dto.Product;
 import com.auctomatic.exception.SomeThingWrongException;
 import com.auctomatic.usecase.AddItemsCase;
+import com.auctomatic.usecase.DeleteProductUsecase;
 import com.auctomatic.usecase.SellerLoginUsecase;
 import com.auctomatic.usecase.SellerRegistrationUsecase;
 import com.auctomatic.usecase.UpdateProductDetails;
+
 
 
 public class SellerMain {
@@ -45,7 +47,8 @@ public class SellerMain {
 	}
 	public void deleteItem() {
 		// TODO Auto-generated method stub
-		
+		DeleteProductUsecase deleteProductUsecase=new DeleteProductUsecase();
+		deleteProductUsecase.deleteProductitem();
 	}
 	public void soldItemsReport() {
 		// TODO Auto-generated method stub

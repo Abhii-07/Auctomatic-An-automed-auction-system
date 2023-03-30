@@ -19,6 +19,7 @@ import com.auctomatic.exception.NoRecordFoundException;
 import com.auctomatic.exception.SellerException;
 
 
+
 public class SellerDaoImpl implements SellerDao{
 
 	@Override
@@ -151,9 +152,30 @@ public class SellerDaoImpl implements SellerDao{
 	}
 
 	@Override
-	public String DeleteProductItems(int productId) throws SellerException {
+	public String DeleteProductItems(int product_ID) throws SellerException {
 		// TODO Auto-generated method stub
-		return null;
+		String result;
+
+        try(Connection conn=DBUtils.provideConnection()) {
+        	String sql = "DELETE FROM PRODUCT WHERE product_ID = ?";
+            PreparedStatement ps=conn.prepareStatement(sql);
+
+            ps.setInt(1, product_ID);
+
+            int x= ps.executeUpdate();
+            if(x>0){
+                result= Color.RED_BACKGROUND_BRIGHT + "Deleted Successfully" + Color.RESET;
+            }else{
+                throw new SellerException("No Product found with productId- " + product_ID );
+            }
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            throw new SellerException(e.getMessage());
+        }
+
+        return result;
 	}
 
 	@Override

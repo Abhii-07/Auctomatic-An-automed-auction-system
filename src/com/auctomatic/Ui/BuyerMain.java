@@ -4,6 +4,7 @@ import com.auctomatic.exception.CredentialException;
 import com.auctomatic.exception.NoRecordFoundException;
 import com.auctomatic.exception.SomeThingWrongException;
 import com.auctomatic.usecase.BuyerLoginUsecase;
+import com.auctomatic.usecase.BuyerPasswordChangeUsecase;
 import com.auctomatic.usecase.BuyerRegistrationUsecase;
 
 
@@ -15,14 +16,23 @@ public class BuyerMain {
     }
     public static void BuyerHomeWindow() {
     	System.out.println();
-        System.out.println("Press 1 to"+ Color.BLUE_BOLD_BRIGHT +" Search and view Items by category"+ Color.RESET);
-        System.out.println("Press 2 to"+ Color.BLUE_BOLD_BRIGHT +" Selects Items to buy"+ Color.RESET);
-        System.out.println("Press 3 to"+ Color.BLUE_BOLD_BRIGHT +" Select and view all the buyers and also their Items category wise"+ Color.RESET);
-        System.out.println("Press 4 to"+ Color.BLUE_BOLD_BRIGHT +" LOGOUT AND RETURN TO HOMEPAGE"+ Color.RESET);
+        System.out.println("Press 1 to"+ Color.BLUE_BOLD_BRIGHT +" Update Details "+ Color.RESET);
+        System.out.println("Press 2 to"+ Color.BLUE_BOLD_BRIGHT +" Change Password "+ Color.RESET);
+        System.out.println("Press 3 to"+ Color.BLUE_BOLD_BRIGHT +" View All Items For Sale "+ Color.RESET);
+        System.out.println("Press 4 to"+ Color.BLUE_BOLD_BRIGHT +" Buy Products" + Color.RESET);
+        System.out.println("Press 5 to"+ Color.BLUE_BOLD_BRIGHT +" Return Products"+ Color.RESET);
+        System.out.println("|");
+        System.out.println("Press 6 to"+ Color.RED_BRIGHT +" LOGOUT "+ Color.RESET);
+        System.out.println("Press 7 to"+ Color.RED_BRIGHT +" DELETE ACCOUNT "+ Color.RESET);
     }
 	public void BuyerRegistration() {
 		 BuyerRegistrationUsecase register = new BuyerRegistrationUsecase();
 		 register.BuyerRegistraion();
+	}
+	
+	public void ChangePassword() {
+		BuyerPasswordChangeUsecase buyer = new BuyerPasswordChangeUsecase();
+		buyer.buyerPasswordChange();
 	}
 	public void SearchItemCategory() {
 		// TODO Auto-generated method stub
