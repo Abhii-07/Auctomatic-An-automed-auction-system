@@ -11,5 +11,7 @@ public interface Buyer {
 	public void setPassword(String password) ;
 	public String getUsername();
 	public void setUsername(String username);
+	public String getMobile();
+	public void setMobile(String buyer_mobile);
     
 }

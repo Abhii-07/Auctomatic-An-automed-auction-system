@@ -8,8 +8,6 @@ import java.util.Scanner;
 import com.auctomatic.exception.CredentialException;
 import com.auctomatic.exception.NoRecordFoundException;
 import com.auctomatic.exception.SomeThingWrongException;
-
-import custom.ConsoleColors;
 public class Main {
 	public static void appOpening() throws CredentialException, SQLException, NoRecordFoundException, SomeThingWrongException {
 		try {
