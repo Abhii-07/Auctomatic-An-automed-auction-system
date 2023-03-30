@@ -4,22 +4,25 @@ import com.auctomatic.exception.CredentialException;
 import com.auctomatic.exception.NoRecordFoundException;
 import com.auctomatic.exception.SomeThingWrongException;
 import com.auctomatic.usecase.BuyerLoginUsecase;
+import com.auctomatic.usecase.BuyerRegistrationUsecase;
+
 
 public class BuyerMain {
-	public static boolean BuyerLogin() throws CredentialException, NoRecordFoundException, SomeThingWrongException{
+	public static boolean BuyerLogin() throws SomeThingWrongException{
         BuyerLoginUsecase login=new BuyerLoginUsecase();
         boolean result = login.BuyerLogin();
         return result;
     }
     public static void BuyerHomeWindow() {
+    	System.out.println();
         System.out.println("Press 1 to"+ Color.BLUE_BOLD_BRIGHT +" Search and view Items by category"+ Color.RESET);
         System.out.println("Press 2 to"+ Color.BLUE_BOLD_BRIGHT +" Selects Items to buy"+ Color.RESET);
         System.out.println("Press 3 to"+ Color.BLUE_BOLD_BRIGHT +" Select and view all the buyers and also their Items category wise"+ Color.RESET);
         System.out.println("Press 4 to"+ Color.BLUE_BOLD_BRIGHT +" LOGOUT AND RETURN TO HOMEPAGE"+ Color.RESET);
     }
 	public void BuyerRegistration() {
-		// TODO Auto-generated method stub
-		
+		 BuyerRegistrationUsecase register = new BuyerRegistrationUsecase();
+		 register.BuyerRegistraion();
 	}
 	public void SearchItemCategory() {
 		// TODO Auto-generated method stub

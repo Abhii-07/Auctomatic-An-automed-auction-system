@@ -26,18 +26,14 @@ public class ViewBuyerListUsecase {
 
             System.out.println();
             list.forEach(li->{
-                System.out.format("%7s %14s %20s %25s",li.getBuyerId(),li.getBuyerName(),li.getEmail(),li.getMobile());
-                System.out.println();
+            	System.out.format("%7s %14s %20s %25s",li.getBuyer_ID(),li.getBuyer_name(),li.getBuyer_email(),li.getBuyer_mobile());
+            	System.out.println();
 
             });
             System.out.println("-------------------------------------------------------------------------------------");
 
         } catch (AdminException e) {
             System.out.println( e.getMessage() );
-            
-            
-            
-            
         }
     }
 }

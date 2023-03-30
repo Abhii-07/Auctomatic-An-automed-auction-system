@@ -21,11 +21,11 @@ public class Main {
 		
 		
 			System.out.println(Color.BLUE_BOLD_BRIGHT+"Choose User Type : " + Color.RESET);
-			System.out.println("Press 1 to" +Color.RED_BOLD_BRIGHT + " Admin "+ Color.RESET);
+			System.out.println("Press 1 to" +Color.RED_BOLD_BRIGHT + " Login as Admin "+ Color.RESET);
 			System.out.println("Press 2 to" +Color.RED_BOLD_BRIGHT + " Register as Buyer." + Color.RESET);
-            System.out.println("Press 3 to" +Color.RED_BOLD_BRIGHT + " logIn as Buyer."+ Color.RESET);
+            System.out.println("Press 3 to" +Color.RED_BOLD_BRIGHT + " Login as Buyer."+ Color.RESET);
             System.out.println("Press 4 to" +Color.RED_BOLD_BRIGHT + " Register as Seller." + Color.RESET);
-            System.out.println("Press 5 to" +Color.RED_BOLD_BRIGHT + " logIn as Seller."+ Color.RESET);
+            System.out.println("Press 5 to" +Color.RED_BOLD_BRIGHT + " Login as Seller."+ Color.RESET);
             System.out.println("Press 6 to" +Color.RED_BOLD_BRIGHT +" EXIT"+ Color.RESET);
 			String choice = sc.nextLine();
 			

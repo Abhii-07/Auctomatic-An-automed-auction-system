@@ -6,8 +6,9 @@ CREATE TABLE BUYER(
      buyer_ID int primary key auto_increment,
      buyer_name VARCHAR(20) not null,
      buyer_email VARCHAR(20) not null unique,
+     buyer_username VARCHAR(20) not null unique,
      buyer_password VARCHAR(15) not null,
-     buyer_location VARCHAR(15)
+     buyer_mobile VARCHAR(15) not null
      );
      
 CREATE TABLE SELLER(

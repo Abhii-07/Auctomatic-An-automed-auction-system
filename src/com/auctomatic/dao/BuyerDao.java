@@ -9,11 +9,10 @@ import com.auctomatic.dto.SoldItems;
 import com.auctomatic.exception.BuyerException;
 import com.auctomatic.exception.CredentialException;
 import com.auctomatic.exception.NoRecordFoundException;
-import com.auctomatic.exception.SomeThingWrongException;
 
 
 public interface BuyerDao {
-	public Buyer BuyerLogin(String buyer_email, String buyer_password) throws NoRecordFoundException, SomeThingWrongException;
+	public Buyer BuyerLogin(String buyer_email, String buyer_password) throws NoRecordFoundException, CredentialException;
 
     public String RegisterBuyer(Buyer buyer) throws BuyerException;
     

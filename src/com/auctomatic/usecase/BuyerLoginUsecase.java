@@ -2,6 +2,7 @@ package com.auctomatic.usecase;
 
 import java.util.Scanner;
 
+import com.auctomatic.Ui.Color;
 import com.auctomatic.dao.BuyerDao;
 import com.auctomatic.dao.BuyerDaoImpl;
 import com.auctomatic.dto.Buyer;
@@ -10,38 +11,29 @@ import com.auctomatic.exception.NoRecordFoundException;
 import com.auctomatic.exception.SomeThingWrongException;
 
 public class BuyerLoginUsecase {
-	public static boolean BuyerLogin() throws CredentialException, NoRecordFoundException, SomeThingWrongException {
-        Scanner sc =new Scanner(System.in);
-        System.out.println("Enter Email-");
-        String buyer_username=sc.next();
-        System.out.println("Enter Password-");
-        String buyer_passowrd=sc.next();
+	
+	public static boolean BuyerLogin() throws SomeThingWrongException {
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("Enter Username-");
+	    String buyer_username = sc.next();
+	    System.out.println("Enter Password-");
+	    String buyer_password = sc.next();
 
-        Buyer result;
-        BuyerDao dao = new BuyerDaoImpl();
-        result=dao.BuyerLogin(buyer_username,buyer_passowrd);
-        System.out.println(result);
-        return true;
-    }
+	    Buyer result = null;
+	    BuyerDao dao = new BuyerDaoImpl();
+	    try {
+	        result = dao.BuyerLogin(buyer_username, buyer_password);
+	        System.out.println(Color.CYAN_BACKGROUND_BRIGHT + "Welcome " + buyer_username + "!");
+	        return true;
+	    } catch (CredentialException e) {
+	        System.err.println("Error: Invalid Credentials");
+	    } catch (NoRecordFoundException e) {
+	        System.err.println("Error: No Record Found");
+	    }
+	    return false;
+	}
+	
     public static void main(String[] args) throws CredentialException, NoRecordFoundException, SomeThingWrongException {
         boolean result = BuyerLogin();
     }
-    
-//    Scanner sc =new Scanner(System.in);
-//    System.out.println("Enter Email-");
-//    String email=sc.next();
-//    System.out.println("Enter Password-");
-//    String password=sc.next();
-//
-//    String result;
-//    AdminDao dao=new AdminDaoImpl();
-//    try {
-//        result=dao.AdminLogin(email,password);
-//        System.out.println(result);
-//        return true;
-//    } catch (CredentialException e) {
-//        result = e.getMessage();
-//        System.out.println(result);
-//        return false;
-//    }
 }
