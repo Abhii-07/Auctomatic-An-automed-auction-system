@@ -8,51 +8,69 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.auctomatic.dto.Buyer;
+import com.auctomatic.dto.BuyerImpl;
 import com.auctomatic.dto.SearchBuyer;
 import com.auctomatic.dto.SoldItems;
 import com.auctomatic.exception.BuyerException;
 import com.auctomatic.exception.CredentialException;
 import com.auctomatic.exception.NoRecordFoundException;
-import com.auctomatic.exception.SomeThingWrongException;
 
 public class BuyerDaoImpl implements BuyerDao{
 
 	@Override
-	public Buyer BuyerLogin(String buyer_username, String buyer_password) throws  NoRecordFoundException, SomeThingWrongException {
+	public Buyer BuyerLogin(String buyer_username, String buyer_password) throws  NoRecordFoundException, CredentialException {
 		// TODO Auto-generated method stub
 		Buyer buyer = null;
 		Connection conn = null;
 		try {
 			conn = DBUtils.provideConnection();
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM BUYER WEHER buyer_username = ? AND buyer_password = ?");
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM BUYER WHERE buyer_username = ? AND buyer_password = ?");
 			ps.setString(1, buyer_username);
 			ps.setString(2, buyer_password);
 			//execute query
-			ResultSet resultSet = ps.executeQuery();
-			if(DBUtils.isResultSetEmpty(resultSet)) {
-				throw new NoRecordFoundException("Invalid Username and Password");
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				int buyerId = rs.getInt("buyer_ID");
+				String buyerName = rs.getString("buyer_name");
+				String buyerEmail = rs.getString("buyer_email");
+				String buyerUsername = rs.getString("buyer_username");
+				String buyerPassword =  rs.getString("buyer_password");
+				String buyerMobile =  rs.getString("buyer_mobile");
+				buyer = new BuyerImpl(buyerId,buyerName,buyerEmail,buyerUsername,buyerPassword,buyerMobile);
+			}else {
+				throw new CredentialException("Couldn't find the Buyer!");
 			}
-			
-			//you are here means username and password combination is correct
-			resultSet.next();
-			LoggedINUser.loggedInUserId = resultSet.getInt("buyer_id");
-		}catch(SQLException sqlEx) {
-			//code to log the error in the file
-			throw new SomeThingWrongException();
-		}finally {
-			try {
-				//close the exception
-				DBUtils.closeConnection(conn);				
-			}catch(SQLException sqlEX) {
-				throw new SomeThingWrongException();
-			}
+		}catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return buyer;
 	}
 	@Override
 	public String RegisterBuyer(Buyer buyer) throws BuyerException {
 		// TODO Auto-generated method stub
-		return null;
+		String result="Registration Filed....Try Agin";
+
+        try(Connection conn=DBUtils.provideConnection()) {
+            PreparedStatement ps=conn.prepareStatement("insert into buyer (buyer_name,buyer_email,buyer_username,buyer_password,buyer_mobile) values (?,?,?,?,?)");
+
+            ps.setString(1, buyer.getBuyer_name());
+            ps.setString(2, buyer.getBuyer_email());
+            ps.setString(3, buyer.getBuyer_username());
+            ps.setString(4, buyer.getBuyer_password());
+            ps.setString(5, buyer.getBuyer_mobile());
+
+           int x= ps.executeUpdate();
+           if(x>0){
+               result="Registered Successfully";
+           }else{
+               throw new BuyerException(result);
+           }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return result;
 	}
 
 	@Override

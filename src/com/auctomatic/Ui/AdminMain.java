@@ -2,12 +2,9 @@ package com.auctomatic.Ui;
 
 import com.auctomatic.exception.CredentialException;
 import com.auctomatic.usecase.AdminLoginUsecase;
+import com.auctomatic.usecase.ViewBuyerListUsecase;
 
-import usecases.DailyDisputeReportUseCase;
-import usecases.DailySellingReportUsecase;
-import usecases.ResolveDisputeUseCase;
-import usecases.ViewBuyerListUseCase;
-import usecases.ViewSellerListUseCase;
+
 
 public class AdminMain {
 	public static boolean AdminLogin() throws CredentialException{
@@ -27,7 +24,8 @@ public class AdminMain {
 
 	public void viewBuyers() {
 		// TODO Auto-generated method stub
-		
+		 ViewBuyerListUsecase viewBuyerListUseCase=new ViewBuyerListUsecase();
+		 viewBuyerListUseCase.viewBuyerList();
 	}
 
 	public void viewSellers() {
