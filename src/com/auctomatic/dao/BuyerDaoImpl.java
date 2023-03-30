@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.auctomatic.Ui.Color;
 import com.auctomatic.dto.Buyer;
 import com.auctomatic.dto.BuyerImpl;
 import com.auctomatic.dto.SearchBuyer;
@@ -14,6 +15,7 @@ import com.auctomatic.dto.SoldItems;
 import com.auctomatic.exception.BuyerException;
 import com.auctomatic.exception.CredentialException;
 import com.auctomatic.exception.NoRecordFoundException;
+import com.auctomatic.exception.SellerException;
 
 public class BuyerDaoImpl implements BuyerDao{
 
@@ -72,6 +74,35 @@ public class BuyerDaoImpl implements BuyerDao{
 
         return result;
 	}
+	
+	@Override
+	public String changePassword(String buyer_username,String buyer_password) throws SellerException {
+	    // TODO Auto-generated method stub
+	    String result;
+
+	    try (Connection conn = DBUtils.provideConnection()) {
+	        PreparedStatement ps = conn.prepareStatement("UPDATE BUYER SET buyer_password = ? where buyer_username = ?");
+
+	        ps.setString(1, buyer_password);
+	        ps.setString(2, buyer_username);
+
+	        int row = ps.executeUpdate();
+	        if (row > 0) {
+	            result = Color.GREEN_BOLD_BRIGHT + "Password Changed Successfully" + Color.RESET;
+	        } else {
+	            throw new SellerException(Color.RED_BRIGHT +"No Buyer found with username- " + buyer_username + Color.RESET);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        throw new SellerException(e.getMessage());
+	    } catch (NullPointerException e) {
+	        e.printStackTrace();
+	        throw new SellerException("Error: Null value passed as parameter.");
+	    }
+
+	    return result;
+	}
+
 
 	@Override
 	public String BuyItem(int buyerId, LocalDate date, String productName) throws BuyerException {
