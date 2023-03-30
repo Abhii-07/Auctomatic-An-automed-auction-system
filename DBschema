@@ -10,14 +10,16 @@ CREATE TABLE BUYER(
      buyer_password VARCHAR(15) not null,
      buyer_mobile VARCHAR(15) not null
      );
-     
+
 CREATE TABLE SELLER(
      seller_ID int primary key auto_increment,
      seller_name VARCHAR(20) not null,
      seller_email VARCHAR(20) not null unique,
+     seller_username VARCHAR(20) not null unique,
      seller_password VARCHAR(15) not null,
-     seller_location VARCHAR(15)
-    );
+     seller_mobile VARCHAR(15) not null
+     );
+
     
 CREATE TABLE CATEGORY(
     category_ID int primary key auto_increment,
@@ -72,17 +74,28 @@ mysql> select * from category;
 by providing item_id, name, price, quantity, description,
 sold_status (0 for unsold, 1 for sold)
 
-create table products(
-    item_id int primary key auto_increment,
-    item_name varchar(30) not null,
-    item_price int,
-    item_quantity int,
-    item_description varchar(50),
-    sold_status tinyint default 0,
-    buyer_ID int,
-    seller_ID int,
-    category_ID int,
-    foreign key (seller_ID) references seller(seller_ID),
-    foreign key (category_ID) references category(category_ID),
-    foreign key (buyer_ID) references buyer(buyer_ID)
-    );
+CREATE TABLE product (
+		product_ID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+		product_name VARCHAR(25),
+		category VARCHAR(30),
+		price DOUBLE,
+		buyer_ID int,
+		seller_ID int,
+		sold_status TINYINT,
+		description VARCHAR(255),
+		PRIMARY KEY (product_ID)
+		) AUTO_INCREMENT=100;
+
+mysql> DESC PRODUCT;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| product_ID   | int unsigned | NO   | PRI | NULL    | auto_increment |
+| product_name | varchar(25)  | YES  |     | NULL    |                |
+| category     | varchar(30)  | YES  |     | NULL    |                |
+| price        | double       | YES  |     | NULL    |                |
+| buyer_ID     | int          | YES  |     | NULL    |                |
+| seller_ID    | int          | YES  |     | NULL    |                |
+| sold_status  | tinyint      | YES  |     | NULL    |                |
+| description  | varchar(255) | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+

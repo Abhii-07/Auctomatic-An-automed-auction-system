@@ -147,10 +147,8 @@ public class Home {
 				else if(choice.equals("3")) {
 					SellerMain sellerMain=new SellerMain();
 		            sellerMain.SellerRegistration();
-		
-		            appOpening();
-		            System.out.println();
 		            System.out.println("-----------------------------------------------------------------------------------------------------");
+		            appOpening();
 				}
 				else if(choice.equals("4")) {
 					SellerMain sellerMain=new SellerMain();
@@ -172,34 +170,40 @@ public class Home {
 		            if(results) {
 		
 		                while(true) {
-		
+		                	System.out.println();
 		                    sellerMain.SellerHomeWindow();
 		
 		                    String choiceAdmin = sc.nextLine();
 		
 		                    if(choiceAdmin.equals("1")) {
-		                        sellerMain.createListofProducts();
+		                        sellerMain.AddItems();
 		                    }else if(choiceAdmin.equals("2")) {
-		                        sellerMain.updateProductList();
+		                        sellerMain.updateItem();
 		                    }else if (choiceAdmin.equals("3")) {
-		                        sellerMain.deleteProductItem();
+		                        sellerMain.deleteItem();
 		                    }else if (choiceAdmin.equals("4")) {
-		                        sellerMain.soldItemHistory();
-		                    }else if(choiceAdmin.equals("5")){
-		                        System.out.println( "LOGOUT SUCCESSFUL !");
+		                        sellerMain.soldItemsReport();
+		                    }else if (choiceAdmin.equals("5")) {
+		                        sellerMain.returnedItemsReport();
+		                    }else if (choiceAdmin.equals("6")) {
+		                        System.out.println( Color.BLUE + "LOGOUT SUCCESSFUL!" + Color.RESET);
+		                        break;
+		                    }else if(choiceAdmin.equals("7")){
+		                    	sellerMain.sellerDelete();
+		                        System.out.println( Color.BLUE + "Deleted SUCCESSFUL!" + Color.RESET);
 		                        break;
 		                    }else {
-		                        System.out.println("CHOOSE CORRECT INPUT RANGE FROM 1 TO 5" );
+		                        System.out.println("CHOOSE CORRECT INPUT RANGE FROM 1 TO 7" );
 		                    }
 		                }
-		                appOpening();
 		                System.out.println();
 		                System.out.println("-----------------------------------------------------------------------------------------------------");
+		                appOpening();
 		
 		            }else {
-		                appOpening();
 		                System.out.println();
 		                System.out.println("-----------------------------------------------------------------------------------------------------");
+		                appOpening();
 		            }
 				}
 	            

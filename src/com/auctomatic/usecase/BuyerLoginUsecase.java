@@ -23,7 +23,7 @@ public class BuyerLoginUsecase {
 	    BuyerDao dao = new BuyerDaoImpl();
 	    try {
 	        result = dao.BuyerLogin(buyer_username, buyer_password);
-	        System.out.println(Color.CYAN_BACKGROUND_BRIGHT + "Welcome " + buyer_username + "!");
+	        System.out.println(Color.CYAN_BACKGROUND_BRIGHT + "Welcome " + buyer_username + "!" + Color.RESET);
 	        return true;
 	    } catch (CredentialException e) {
 	        System.err.println("Error: Invalid Credentials");
