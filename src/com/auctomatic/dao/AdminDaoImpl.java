@@ -5,17 +5,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import com.auctomatic.Ui.Color;
 import com.auctomatic.dto.Buyer;
 import com.auctomatic.dto.BuyerImpl;
 import com.auctomatic.dto.Product;
+import com.auctomatic.dto.SearchBuyer;
 import com.auctomatic.dto.SearchBuyerImpl;
 import com.auctomatic.dto.Seller;
 import com.auctomatic.dto.SellerImpl;
 import com.auctomatic.exception.AdminException;
 import com.auctomatic.exception.CredentialException;
+
 
 
 
@@ -95,33 +98,21 @@ public class AdminDaoImpl implements AdminDao{
 
         try(Connection conn=DBUtils.provideConnection()) {
 
-            PreparedStatement ps=conn.prepareStatement("SELECT \r\n"
-            		+ "    DATE_FORMAT(purchase_date, '%Y-%m-%d') AS Date,\r\n"
-            		+ "    COUNT(product_ID) AS Total_Sold,\r\n"
-            		+ "    SUM(price) AS Total_Sales\r\n"
-            		+ "FROM \r\n"
-            		+ "    product\r\n"
-            		+ "WHERE \r\n"
-            		+ "    sold_status = 1\r\n"
-            		+ "GROUP BY \r\n"
-            		+ "    Date\r\n"
-            		+ "ORDER BY \r\n"
-            		+ "    Date DESC;\r\n"
-            		+ "");
+            PreparedStatement ps=conn.prepareStatement("SELECT b.buyer_Id, b.buyer_name, b.buyer_email, p.product_name, c.category_name, s.seller_ID, p.price FROM product p INNER JOIN category c ON p.category = c.category_name INNER JOIN seller s ON p.seller_ID = s.seller_ID INNER JOIN buyer b ON p.buyer_Id = b.buyer_Id WHERE p.purchase_date = ?");
 
             ps.setString(1, String.valueOf(date));
 
             ResultSet rs=ps.executeQuery();
             while (rs.next()){
-            	Buyer buyer =new BuyerImpl();
-//            	buyer.setBuyerId(rs.getInt("buyerId"));
-//            	buyer.setBuyerName(rs.getString("buyerName"));
-//            	buyer.setEmail(rs.getString("email"));
-//            	buyer.setCategoryName(rs.getString("categoryName"));
-//            	buyer.setProductName(rs.getString("productName"));
-//            	buyer.setSellerId(rs.getInt("sellerId"));
-//            	buyer.setPrice(rs.getInt("price"));
-                list.add((SearchBuyerImpl) buyer);
+            	SearchBuyer searchBuyerDTO=new SearchBuyerImpl();
+                searchBuyerDTO.setBuyer_ID(rs.getInt("buyer_ID"));
+                searchBuyerDTO.setBuyer_name(rs.getString("buyer_name"));
+                searchBuyerDTO.setBuyer_email(rs.getString("buyer_email"));
+                searchBuyerDTO.setCategory_name(rs.getString("category_name"));
+                searchBuyerDTO.setProduct_name(rs.getString("product_name"));
+                searchBuyerDTO.setSeller_ID(rs.getInt("seller_ID"));
+                searchBuyerDTO.setPrice(rs.getInt("price"));
+                list.add((SearchBuyerImpl) searchBuyerDTO);
             }
             if(list.size()==0){
                 throw new AdminException("No Item Sold on Date- "+date);
@@ -134,15 +125,34 @@ public class AdminDaoImpl implements AdminDao{
 	}
 
 	@Override
-	public List<Product> DailyDisputeReport(String date) throws AdminException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<SearchBuyerImpl> viewSalesReportLastSevenDays() throws SQLException {
+        List<SearchBuyerImpl> sales = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date endDate = new java.sql.Date(calendar.getTime().getTime());
+        calendar.add(Calendar.DAY_OF_YEAR, -7);
+        java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
 
-	@Override
-	public String SolveDispute(int categoryId, int productId) throws AdminException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+        try (Connection conn = DBUtils.provideConnection()) {
+            String sql = "SELECT b.buyer_Id, b.buyer_name, b.buyer_email, p.product_name, c.category_name, s.seller_ID, p.price FROM product p INNER JOIN category c ON p.category = c.category_name INNER JOIN seller s ON p.seller_ID = s.seller_ID INNER JOIN buyer b ON p.buyer_Id = b.buyer_Id WHERE p.purchase_date BETWEEN ? AND ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setDate(1, startDate);
+            ps.setDate(2, endDate);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                SearchBuyerImpl sale = new SearchBuyerImpl();
+                sale.setBuyer_ID(rs.getInt("buyer_ID"));
+                sale.setBuyer_name(rs.getString("buyer_name"));
+                sale.setBuyer_email(rs.getString("buyer_email"));
+                sale.setCategory_name(rs.getString("category_name"));
+                sale.setProduct_name(rs.getString("product_name"));
+                sale.setSeller_ID(rs.getInt("seller_ID"));
+                sale.setPrice(rs.getInt("price"));
+                sales.add(sale);
+            }
+        }
+
+        return sales;
+    }
 
 }

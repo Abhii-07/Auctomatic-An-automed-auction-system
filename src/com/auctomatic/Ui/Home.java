@@ -58,11 +58,9 @@ public class Home {
 	                        adminMain.viewSellers();
 	                    }else if (choiceAdmin.equals("3")) {
 	                        adminMain.dailySellingReport();
-	                    }else if(choiceAdmin.equals("4")){
-	                        adminMain.dailyDisputeReport();
+	                    }else if (choiceAdmin.equals("4")) {
+	                        adminMain.weeklySellingReport();
 	                    }else if(choiceAdmin.equals("5")){
-	                        adminMain.solveDispute();
-	                    }else if(choiceAdmin.equals("6")){
 	                        System.out.println("LOGOUT SUCCESSFUL !");
 	                        break;
 	                    }else {
