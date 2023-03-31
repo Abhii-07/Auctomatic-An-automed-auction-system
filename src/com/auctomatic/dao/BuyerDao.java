@@ -21,7 +21,7 @@ public interface BuyerDao {
     
     public String BuyItem(int buyerId, LocalDate date,String productName) throws BuyerException;
     
-    public List<SoldItems> searchItemByCategory(String categoryName) throws BuyerException;
-    
     public List<SearchBuyer> ViewAllBuyersDetails(String categoryName) throws BuyerException;
+
+	public List<SoldItems> viewAllItemsForSale(String category) throws BuyerException;
 }

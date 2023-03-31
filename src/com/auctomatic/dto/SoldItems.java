@@ -1,27 +1,27 @@
 package com.auctomatic.dto;
 
 public interface SoldItems {
-	public int getProduct_ID();
+	public int getProductId() ;
 
-	public void setProduct_ID(int product_ID);
+	public void setProductId(int productId) ;
 
-	public String getProduct_name();
+	public String getProductName() ;
 
-	public void setProduct_name(String product_name);
+	public void setProductName(String productName) ;
+	
+	public String getSellerName() ;
 
-	public String getSeller_name();
+	public void setSellerName(String sellerName) ;
 
-	public void setSeller_name(String seller_name);
+	public String getCategoryName() ;
 
-	public String getCategory_name() ;
+	public void setCategoryName(String categoryName) ;
+	
+	public int getBuyerId() ;
 
-	public void setCategory_name(String category_name);
+	public void setBuyerId(int buyerId) ;
 
-	public int getBuyer_ID();
+	public double getPrice();
 
-	public void setBuyer_ID(int buyer_ID);
-
-	public int getPrice();
-
-	public void setPrice(int price);
+	public void setPrice(double price) ;
 }

@@ -3,6 +3,8 @@ package com.auctomatic.Ui;
 import com.auctomatic.exception.CredentialException;
 import com.auctomatic.usecase.AdminLoginUsecase;
 import com.auctomatic.usecase.ViewBuyerListUsecase;
+import com.auctomatic.usecase.ViewSellerListUsecase;
+
 
 
 
@@ -30,7 +32,8 @@ public class AdminMain {
 
 	public void viewSellers() {
 		// TODO Auto-generated method stub
-		
+		ViewSellerListUsecase viewSellerListUseCase=new ViewSellerListUsecase();
+        viewSellerListUseCase.viewSellerList();
 	}
 
 	public void dailySellingReport() {

@@ -126,15 +126,13 @@ public class Home {
 		                    }else if(choiceAdmin.equals("2")) {
 		                    	buyerMain.ChangePassword();
 		                    }else if (choiceAdmin.equals("3")) {
-		                    	buyerMain.ChangePassword();
+		                    	buyerMain.ViewAllItemsForSale();
 		                    }else if (choiceAdmin.equals("4")) {
-		                    	buyerMain.ChangePassword();
+		                    	buyerMain.BuyItem();
 		                    }else if (choiceAdmin.equals("5")) {
-		                    	buyerMain.ChangePassword();
-		                    }else if (choiceAdmin.equals("6")) {
 		                        System.out.println( Color.BLUE + "LOGOUT SUCCESSFUL!" + Color.RESET);
 		                        break;
-		                    }else if(choiceAdmin.equals("7")){
+		                    }else if(choiceAdmin.equals("6")){
 		                    	buyerMain.ChangePassword();
 		                        System.out.println( Color.RED + "Deleted SUCCESSFUL!" + Color.RESET);
 		                        break;
