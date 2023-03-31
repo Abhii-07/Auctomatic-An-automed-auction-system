@@ -99,3 +99,18 @@ mysql> DESC PRODUCT;
 | sold_status  | tinyint      | YES  |     | NULL    |                |
 | description  | varchar(255) | YES  |     | NULL    |                |
 +--------------+--------------+------+-----+---------+----------------+
+
+
+
+CREATE TABLE order_table(
+    order_ID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    buyer_ID int NOT NULL,
+    seller_ID int NOT NULL,
+    product_ID int NOT NULL,
+    bid_price double NOT NULL,
+    order_status tinyint
+);
+
+
+
+

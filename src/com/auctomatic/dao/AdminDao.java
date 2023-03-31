@@ -1,5 +1,6 @@
 package com.auctomatic.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.auctomatic.dto.Buyer;
@@ -19,9 +20,7 @@ public interface AdminDao {
 
     public List<SearchBuyerImpl> DailySellingReport(String date) throws AdminException;
 
-    public List<Product> DailyDisputeReport(String date) throws AdminException;
-
-    public String SolveDispute(int categoryId,int productId) throws AdminException;
+	List<SearchBuyerImpl> viewSalesReportLastSevenDays() throws SQLException;
 }
 	
 
