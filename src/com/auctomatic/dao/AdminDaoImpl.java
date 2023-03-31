@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.auctomatic.Ui.Color;
 import com.auctomatic.dto.Buyer;
 import com.auctomatic.dto.BuyerImpl;
 import com.auctomatic.dto.Product;
@@ -16,8 +17,6 @@ import com.auctomatic.dto.SellerImpl;
 import com.auctomatic.exception.AdminException;
 import com.auctomatic.exception.CredentialException;
 
-import DTO.SearchBuyer;
-import utility.DBUtils;
 
 
 
@@ -29,7 +28,8 @@ public class AdminDaoImpl implements AdminDao{
 		String result="Invalid email/password";
 
 		 if (username.equals("admin") && password.equals("admin")) {
-			 result="Welcome Admin -Login Successful";
+			 System.out.println();
+			 result= Color.BLUE_BACKGROUND_BRIGHT + " Welcome Admin -Login Successful " + Color.RESET;
 		 }else{
 			 throw new CredentialException(result);
 		 }
@@ -114,13 +114,13 @@ public class AdminDaoImpl implements AdminDao{
             ResultSet rs=ps.executeQuery();
             while (rs.next()){
             	Buyer buyer =new BuyerImpl();
-            	buyer.setBuyerId(rs.getInt("buyerId"));
-            	buyer.setBuyerName(rs.getString("buyerName"));
-            	buyer.setEmail(rs.getString("email"));
-            	buyer.setCategoryName(rs.getString("categoryName"));
-            	buyer.setProductName(rs.getString("productName"));
-            	buyer.setSellerId(rs.getInt("sellerId"));
-            	buyer.setPrice(rs.getInt("price"));
+//            	buyer.setBuyerId(rs.getInt("buyerId"));
+//            	buyer.setBuyerName(rs.getString("buyerName"));
+//            	buyer.setEmail(rs.getString("email"));
+//            	buyer.setCategoryName(rs.getString("categoryName"));
+//            	buyer.setProductName(rs.getString("productName"));
+//            	buyer.setSellerId(rs.getInt("sellerId"));
+//            	buyer.setPrice(rs.getInt("price"));
                 list.add((SearchBuyerImpl) buyer);
             }
             if(list.size()==0){
