@@ -34,4 +34,4 @@
 </ul>
 
 <h2></h2>
-<img src="https://github.com/sofiyanshaikh008/Automated-Auction-System01/blob/main/ERD.PNG" alt="ERD">
+<img src="https://github.com/Abhii-07/fortunate-ship-9511/blob/main/images/Auctomatic-ER.png" alt="ERD">
