@@ -32,6 +32,5 @@
     <li>Select and view all the buyers and also their Items category wise.</li>
     <li>Selects Items to buy.</li>
 </ul>
+![Auctomatic-ER](https://user-images.githubusercontent.com/97459166/229278857-021410b5-52b5-4a9e-ab89-7d44e81740b3.png)
 
-<h2></h2>
-<img src="https://github.com/Abhii-07/fortunate-ship-9511/blob/main/images/Auctomatic-ER.png" alt="ERD">
