@@ -3,6 +3,7 @@ package com.auctomatic.dao;
 import java.util.List;
 
 import com.auctomatic.dto.Product;
+import com.auctomatic.dto.SearchBuyerImpl;
 import com.auctomatic.dto.Seller;
 import com.auctomatic.dto.SoldItems;
 import com.auctomatic.exception.CredentialException;
@@ -23,6 +24,6 @@ public interface SellerDao {
 
 	 public String DeleteProductItems(int product_ID) throws SellerException;
 
-	 public List<SoldItems> SoldItemHistory(int sellerId) throws SellerException;
+//	public List<SearchBuyerImpl> SoldItemReport(int sellerId)throws SellerException;
 	
 }

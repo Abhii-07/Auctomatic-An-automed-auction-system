@@ -178,10 +178,10 @@ public class SellerDaoImpl implements SellerDao{
         return result;
 	}
 
-	@Override
-	public List<SoldItems> SoldItemHistory(int sellerId) throws SellerException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public List<SoldItems> SoldItemReport(int sellerId) throws SellerException {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }
