@@ -25,7 +25,7 @@ public class AdminMain {
         System.out.println("Press 2 to"+ Color.BLUE_BOLD_BRIGHT +" View the Registered Seller list"+ Color.RESET);
         System.out.println("Press 3 to"+ Color.BLUE_BOLD_BRIGHT +" View the Daily selling report"+ Color.RESET);
         System.out.println("Press 4 to"+ Color.BLUE_BOLD_BRIGHT +" View the Weekly selling report"+ Color.RESET);
-        System.out.println("Press 6 to"+ Color.BLUE_BOLD_BRIGHT +" LOGOUT AND RETURN TO HOMEPAGE"+ Color.RESET);
+        System.out.println("Press 5 to"+ Color.BLUE_BOLD_BRIGHT +" LOGOUT AND RETURN TO HOMEPAGE"+ Color.RESET);
     }
 
 	public void viewBuyers() {

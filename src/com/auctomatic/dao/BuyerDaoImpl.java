@@ -157,48 +157,7 @@ public class BuyerDaoImpl implements BuyerDao{
         }
 
         return result;
-		
-		
-		
-		
-//		String result = null;
-//
-//	    try (Connection conn = DBUtils.provideConnection()) {
-//	        conn.setAutoCommit(false);
-//
-//	        // Update product table
-//	        PreparedStatement psUpdateProduct = conn.prepareStatement(
-//	                "UPDATE PRODUCT SET sold_status = 1 ,buyer_ID = ? , purchase_date = ? where product_name=?");
-//	        psUpdateProduct.setInt(1, buyer_ID);
-//	        psUpdateProduct.setDate(2, Date.valueOf(purchase_date));
-//	        psUpdateProduct.setString(3, product_name);
-//
-//	        int numUpdated = psUpdateProduct.executeUpdate();
-//	        if (numUpdated <= 0) {
-//	            throw new BuyerException("No Product found with productName- " + product_name);
-//	        }
-//
-//	        // Insert order into orders table
-//	        PreparedStatement psInsertOrder = conn.prepareStatement(
-//	                "INSERT INTO ORDER_TABLE (order_ID,buyer_ID,seller_ID ,product_ID,bid_price,order_status) VALUES (?, ?, ?)");
-//	        psInsertOrder.setInt(1, buyer_ID);
-//	        psInsertOrder.setInt(2, seller_ID);
-//	        psInsertOrder.setInt(3, product_ID);
-//	        psInsertOrder.setInt(4, buyer_ID);
-//	        psInsertOrder.setString(3, product_name);
-//
-//	        psInsertOrder.executeUpdate();
-//
-//	        conn.commit();
-//
-//	        result = "Item Bought Successfully- Will be delivered shortly";
-//	    } catch (SQLException e) {
-//	        e.printStackTrace();
-//	    }
-//
-//	    return result;
 	}
-
 	
 
 	@Override

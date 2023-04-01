@@ -24,11 +24,10 @@ public class SellerMain {
         System.out.println("Press 1 to"+ Color.BLUE_BOLD_BRIGHT +" Add Items to Sell "+ Color.RESET);
         System.out.println("Press 2 to"+ Color.CYAN_BOLD_BRIGHT +" Update Details of Item "+ Color.RESET);
         System.out.println("Press 3 to"+ Color.CYAN_BOLD_BRIGHT +" Delete Item "+ Color.RESET);
-        System.out.println("Press 4 to"+ Color.CYAN_BOLD_BRIGHT +" See Transaction Report of Items Sold " + Color.RESET);
-        System.out.println("Press 5 to"+ Color.CYAN_BOLD_BRIGHT +" See Transaction Report of Items Returned"+ Color.RESET);
+//        System.out.println("Press 4 to"+ Color.CYAN_BOLD_BRIGHT +" See Transaction Report of Items Sold " + Color.RESET);
         System.out.println();
-        System.out.println("Press 6 to"+ Color.RED_BRIGHT +" LOGOUT "+ Color.RESET);
-        System.out.println("Press 7 to"+ Color.RED_BRIGHT +" DELETE ACCOUNT "+ Color.RESET);
+        System.out.println("Press 5 to"+ Color.RED_BRIGHT +" LOGOUT "+ Color.RESET);
+        System.out.println("Press 6 to"+ Color.RED_BRIGHT +" DELETE ACCOUNT "+ Color.RESET);
     }
 	public void SellerRegistration() {
 		SellerRegistrationUsecase register = new SellerRegistrationUsecase();
@@ -50,18 +49,12 @@ public class SellerMain {
 		DeleteProductUsecase deleteProductUsecase=new DeleteProductUsecase();
 		deleteProductUsecase.deleteProductitem();
 	}
-	public void soldItemsReport() {
-		// TODO Auto-generated method stub
-		
-	}
+//	public void soldItemsReport() {
+//		// TODO Auto-generated method stub
+//		SellingReportSellerUsecase sellingReportSellerUsecase=new SellingReportSellerUsecase();
+//		sellingReportSellerUsecase.getSalesReportForSeller();
+//	}
 	
-	public void returnedItemsReport() {
-		// TODO Auto-generated method stub
-		
-	}
-	public void sellerDelete() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 }

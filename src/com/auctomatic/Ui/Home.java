@@ -121,13 +121,11 @@ public class Home {
 		
 		                    if(choiceAdmin.equals("1")) {
 		                    	buyerMain.ChangePassword();
-		                    }else if(choiceAdmin.equals("2")) {
-		                    	buyerMain.ChangePassword();
-		                    }else if (choiceAdmin.equals("3")) {
+		                    }else if (choiceAdmin.equals("2")) {
 		                    	buyerMain.ViewAllItemsForSale();
-		                    }else if (choiceAdmin.equals("4")) {
+		                    }else if (choiceAdmin.equals("3")) {
 		                    	buyerMain.BuyItem();
-		                    }else if (choiceAdmin.equals("5")) {
+		                    }else if (choiceAdmin.equals("4")) {
 		                        System.out.println( Color.BLUE + "LOGOUT SUCCESSFUL!" + Color.RESET);
 		                        break;
 		                    }else if(choiceAdmin.equals("6")){
@@ -185,16 +183,8 @@ public class Home {
 		                        sellerMain.updateItem();
 		                    }else if (choiceAdmin.equals("3")) {
 		                        sellerMain.deleteItem();
-		                    }else if (choiceAdmin.equals("4")) {
-		                        sellerMain.soldItemsReport();
 		                    }else if (choiceAdmin.equals("5")) {
-		                        sellerMain.returnedItemsReport();
-		                    }else if (choiceAdmin.equals("6")) {
 		                        System.out.println( Color.BLUE + "LOGOUT SUCCESSFUL!" + Color.RESET);
-		                        break;
-		                    }else if(choiceAdmin.equals("7")){
-		                    	sellerMain.sellerDelete();
-		                        System.out.println( Color.BLUE + "Deleted SUCCESSFUL!" + Color.RESET);
 		                        break;
 		                    }else {
 		                        System.out.println("CHOOSE CORRECT INPUT RANGE FROM 1 TO 7" );
