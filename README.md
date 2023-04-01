@@ -32,5 +32,5 @@
     <li>Select and view all the buyers and also their Items category wise.</li>
     <li>Selects Items to buy.</li>
 </ul>
-![Auctomatic-ER](https://user-images.githubusercontent.com/97459166/229278857-021410b5-52b5-4a9e-ab89-7d44e81740b3.png)
+![Auctomatic-ER](images/Auctomatic-ER)
 
