@@ -20,18 +20,14 @@
 <ul><h2>Administrator</h2>
     <li>View the registered buyer list.</li>
     <li>View the registered Seller list.</li>
-    <li>View the daily dispute report.</li>
-    <li>View the daily selling report.</li>
-    <li>Solve the dispute report.</li>
+    <li>View the Daily selling report.</li>
+    <li>View the Weekly selling report.</li>
 </ul>
 
 <ul><h2>Seller</h2>
-    <li>Register himself or herself as seller.</li>
     <li>Create list of items to sell.</li>
     <li>Update Item price, quantity, etc.</li>
-    <li>Add new Item in the list.</li>
     <li>Remove items from the list.</li>
-    <li>View the sold Item history.</li>
 </ul>
 
 <ul><h2>Buyer</h2>
