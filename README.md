@@ -1,4 +1,6 @@
-<h1>Automated Auction System (SQL Database project)</h1>
+<div align=center>
+  <h1> Auctomation Auction Management System </h1>
+</div>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/97459166/229339339-c626d7ac-7152-4e15-9400-e5ddfe04d0dd.png" alt="Auctomatic">
