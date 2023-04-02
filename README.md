@@ -33,7 +33,5 @@
     <li>Selects Items to buy.</li>
 </ul>
 
-<p align="center">
-  <img src="https://imgur.com/a/pGS3072">
-</p>
+![Auctomatic-ER](https://user-images.githubusercontent.com/97459166/229339282-015492b4-e97f-4055-a463-4f774071742d.png)
 
