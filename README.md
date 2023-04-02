@@ -1,5 +1,5 @@
 <div align=center>
-  <h1> Auctomation Auction Management System </h1>
+  <h1> Auctomated Auction Management System </h1>
 </div>
 
 <p align="center">
