@@ -32,5 +32,8 @@
     <li>Select and view all the buyers and also their Items category wise.</li>
     <li>Selects Items to buy.</li>
 </ul>
-![Auctomatic-ER](https://imgur.com/a/pGS3072)
+
+<p align="center">
+  <img src="https://imgur.com/a/pGS3072">
+</p>
 
