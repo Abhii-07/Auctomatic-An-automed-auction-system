@@ -9,7 +9,7 @@
 
 <div align=center>
   <h3>Automated Auction System is an Application Software that is used for the buying and selling of products. This software can be used by the auction companies  who arrange the Auction. Various buyers and sellers are registered in the Auction company.</h3>
-
+  <h4>JAVA 8 | JDBC | MYSQL | STS </h4>
 </div>
 <h3>Following are the lists of various users of the system and also the role of the users.</h3>
 <ul>
