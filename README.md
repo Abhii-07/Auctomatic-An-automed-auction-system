@@ -1,14 +1,16 @@
 <div align=center>
-  <h1> Auctomated Auction Management System </h1>
+  <h1> Auctomatic </h1>
+  <h2> An Auctomated Auction System </h2>
 </div>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/97459166/229339339-c626d7ac-7152-4e15-9400-e5ddfe04d0dd.png" alt="Auctomatic">
 </p>
 
+<div align=center>
+  <h3>Automated Auction System is an Application Software that is used for the buying and selling of products. This software can be used by the auction companies  who arrange the Auction. Various buyers and sellers are registered in the Auction company.</h3>
 
-
-<h3>Automated Auction System is an Application Software that is used for the buying and selling of products. This software can be used by the auction companies  who arrange the Auction. Various buyers and sellers are registered in the Auction company.</h3>
+</div>
 <h3>Following are the lists of various users of the system and also the role of the users.</h3>
 <ul>
     <li>Administrator</li>
