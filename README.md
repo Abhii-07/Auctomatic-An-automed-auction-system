@@ -41,5 +41,6 @@
     <li>Selects Items to buy.</li>
 </ul>
 
-![Auctomatic-ER](https://user-images.githubusercontent.com/97459166/229339282-015492b4-e97f-4055-a463-4f774071742d.png)
+![Auctomatic-ER (1)](https://user-images.githubusercontent.com/97459166/230134662-568dc78e-0930-43d6-837b-7c647b7345fa.png)
+
 
